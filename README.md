@@ -1,7 +1,6 @@
 # Flight
 
 
-
 ## Usage
 ```
 mvn clean install
