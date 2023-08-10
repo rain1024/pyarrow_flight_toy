@@ -58,6 +58,33 @@ Here is system architecture for the StoreAnalytics Flight Serve
 4. Machine Learning and Data Science: Allow data scientists and ML engineers to access large datasets for training models and performing analysis.
 5. Cloud-Based Data Services: Build scalable cloud-based data services that can serve multiple clients simultaneously.
 
+## Usecase: StoreAnalytics Flight Server with Action Healthcheck
+
+**Overview**
+
+The StoreAnalytics Flight Server is a specialized use case leveraging Apache Arrow Flight's capabilities to serve the analytics needs of a retail chain. One of the essential features of this server is the implementation of a health check action, which ensures that the system is operating correctly and efficiently.
+
+**System Architecture**
+
+Here is system architecture for the StoreAnalytics Flight Serve
+
+![](images/system-architect.svg)
+
+* Client: Monitoring System & Administrative Tools: These clients interact with the server.
+* StoreAnalytics Flight Server: The central server that coordinates other services.
+* Data Aggregation Service: Collects data from various store locations.
+* Real-Time Analytics Service: Provides real-time insights using an analytics engine.
+* Data Sharing Service: Facilitates data sharing with regional offices and headquarters.
+
+**Description**
+
+1. System Health Monitoring:
+
+* Action Name: "health_check"
+* Purpose: To monitor the health of the StoreAnalytics Flight Server and ensure that all components are functioning correctly.
+* Implementation: The health check action can be implemented to perform various checks, such as database connectivity, availability of essential services, memory usage, CPU load, etc.
+* Response: The action returns a status message, such as "OK" if everything is functioning correctly or detailed error messages if there are issues.
+
 ## Usage
 
 ```
