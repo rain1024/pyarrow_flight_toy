@@ -91,12 +91,28 @@ Here is system architecture for the StoreAnalytics Flight Serve
 * Implementation: The health check action can be implemented to perform various checks, such as database connectivity, availability of essential services, memory usage, CPU load, etc.
 * Response: The action returns a status message, such as "OK" if everything is functioning correctly or detailed error messages if there are issues.
 
-## Usage
+### Usage
 
+You can use the Flight client script to interact with a Flight server. The script provides two actions: `health_check` and `do_exchange`.
+
+#### Health Check
+
+To perform a health check on the Flight server, run the following command:
+
+```bash
+python client.py --server grpc://0.0.0.0:5050 --action health_check
 ```
-mvn clean install
-mvn compile
-mvn exec:java -Dexec.mainClass="com.mycompany.app.ArrowClient"
-mvn exec:java -Dexec.mainClass="com.mycompany.app.App"
-mvn exec:java -Dexec.mainClass="com.mycompany.app.App2"
+
+Replace `grpc://0.0.0.0:5050` with the URL of your Flight server.
+
+#### Do Exchange
+
+To perform a data exchange action on the Flight server, run the following command:
+
+```bash
+python client.py --server grpc://0.0.0.0:5050 --action do_exchange
 ```
+
+Replace `grpc://0.0.0.0:5050` with the URL of your Flight server.
+
+**Note**: The `do_exchange` action is a placeholder in the client script. You should implement the logic for this action as needed.
