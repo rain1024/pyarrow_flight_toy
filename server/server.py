@@ -1,15 +1,30 @@
 import pyarrow as pa
 import pyarrow.flight as flight
+import pathlib
 
-class MonitorSystemHealthAction(flight.FlightServerBase):
+class FlightServer(pa.flight.FlightServerBase):
+    def __init__(self, location="grpc://0.0.0.0:5050",
+                 repo=pathlib.Path("./datasets"), **kwargs):
+        super(FlightServer, self).__init__(location, **kwargs)
+        self._location = location
+        self._repo = repo
+
+    def list_actions(self, context):
+        return [flight.ActionType("health_check", "Check the system's health")]
+
     def do_action(self, context, action):
-        if action.type == "healthcheck":
-            # Perform health check logic here (e.g., check system resources, services status, etc.)
-            health_status = "OK"  # Example status
-            return iter([flight.Result(pa.py_buffer(health_status))])
-        raise ValueError("Unknown action: " + action.type)
-        
-# Create a Flight server on localhost at port 8080
-location = flight.Location.for_grpc_tcp("localhost", 8080)
-server = flight.FlightServer(MonitorSystemHealthAction(), location)
-server.serve()
+        if action.type == "health_check":
+            # Perform the health check logic here
+            # Return the status of the system
+            health_status = "OK"
+            return iter([flight.Result(health_status.encode("utf-8"))])
+        raise flight.FlightUnavailableError("Unknown action!")
+
+def serve():
+    location = "grpc://0.0.0.0:5050"
+    server = FlightServer(location)
+    print("Server is running on:", location)
+    server.serve()
+
+if __name__ == "__main__":
+    serve()
