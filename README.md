@@ -1,6 +1,9 @@
 # Getting Started with Arrow Flight
 
-Introduction to Apache Arrow Flight
+## Introduction to Apache Arrow Flight
+
+![](images/arrow.png)
+
 Apache Arrow Flight is a framework for high-performance data services. It's part of the Apache Arrow project, which provides a standardized, language-independent columnar memory format optimized for analytics. Arrow Flight builds on this foundation to enable efficient over-the-network data transfer, making it a powerful tool for building data servers and clients that can communicate with minimal overhead.
 
 **Key Features**
