@@ -10,7 +10,7 @@ Here's a summary of the results:
 |------------------------------------------|---------------------------:|
 | Pandas DataFrame (Row-oriented)          | 4.249267                   |
 | Pandas DataFrame (Column-oriented)       | 2.912263                   |
-| PyArrow Table                            | 0.692972                   |
+| PyArrow Table                            | 0.820353291                |
 
 The results convey a clear performance distinction among the different data storage formats. The PyArrow Table, storing column-oriented data, documented a significantly lower execution time compared to the Pandas DataFrames, making it the most performant among the three.
 

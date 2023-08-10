@@ -21,9 +21,13 @@ n_iter = 10000
 time_row = timeit(lambda: df_row[df_row['age'].between(18, 25)], number=n_iter)
 time_column = timeit(lambda: df_column[df_column['age'].between(18, 25)], number=n_iter)
 age_chunks = py_table.column('age').combine_chunks()
-time_arrow = timeit(lambda: age_chunks.filter(
-    pc.and_(pc.greater_equal(age_chunks, 18), pc.less_equal(age_chunks, 25))
-), number=n_iter)
+
+def filter_age(py_table):
+    age_chunks = py_table.column('age').combine_chunks()
+    return age_chunks.filter(
+        pc.and_(pc.greater_equal(age_chunks, 18), pc.less_equal(age_chunks, 25))
+    )
+time_arrow = timeit(lambda: filter_age(py_table), number=n_iter)
 
 print('Time to find all customers with age between 18 and 25')
 print('    in row-oriented data:', time_row)
