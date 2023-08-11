@@ -124,3 +124,12 @@ python client_store.py --server grpc://0.0.0.0:5050 --action do_exchange
 Replace `grpc://0.0.0.0:5050` with the URL of your Flight server.
 
 **Note**: The `do_exchange` action is a placeholder in the client script. You should implement the logic for this action as needed.
+
+#### Run Maven Tests
+
+To execute the unit tests for your application, use the following Maven command:
+
+```bash
+cd client-store
+mvn test
+```
