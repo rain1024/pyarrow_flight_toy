@@ -11,7 +11,6 @@ import org.apache.arrow.flight.FlightClient;
 import org.apache.arrow.flight.Location;
 import org.apache.arrow.flight.Result;
 import org.apache.arrow.memory.RootAllocator;
-import org.junit.Test;
 import org.apache.arrow.flight.FlightDescriptor;
 import org.apache.arrow.flight.FlightStream;
 import org.apache.arrow.vector.IntVector;
@@ -19,8 +18,9 @@ import org.apache.arrow.vector.VectorSchemaRoot;
 import org.apache.arrow.vector.types.pojo.ArrowType;
 import org.apache.arrow.vector.types.pojo.Field;
 import org.apache.arrow.vector.types.pojo.Schema;
+import org.junit.jupiter.api.Test;
 
-public class ClientStoreTest {
+public class TestClientStore {
 
     @Test
     public void testHealthCheckAction() throws InterruptedException {

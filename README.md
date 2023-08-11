@@ -101,7 +101,16 @@ Data Exchange Mechanism:
 
 ### Usage
 
-You can use the Flight client script to interact with a Flight server. The script provides two actions: `health_check` and `do_exchange`.
+This section provides instructions on how to run the Flight server and interact with it using the client script.
+
+#### Running the Flight Server
+
+Before interacting with the Flight server, you need to start the server by running the `server.py` file. This will allow the client to communicate with the server and perform actions.
+
+```bash
+cd server
+python server.py
+```
 
 #### Health Check
 
