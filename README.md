@@ -1,4 +1,5 @@
 # Getting Started with Arrow Flight
+# Getting Started with Arrow Flight
 
 ## Introduction to Apache Arrow Flight
 
