@@ -100,7 +100,7 @@ You can use the Flight client script to interact with a Flight server. The scrip
 To perform a health check on the Flight server, run the following command:
 
 ```bash
-python client.py --server grpc://0.0.0.0:5050 --action health_check
+python client_store.py --server grpc://0.0.0.0:5050 --action health_check
 ```
 
 Replace `grpc://0.0.0.0:5050` with the URL of your Flight server.
@@ -110,7 +110,7 @@ Replace `grpc://0.0.0.0:5050` with the URL of your Flight server.
 To perform a data exchange action on the Flight server, run the following command:
 
 ```bash
-python client.py --server grpc://0.0.0.0:5050 --action do_exchange
+python client_store.py --server grpc://0.0.0.0:5050 --action do_exchange
 ```
 
 Replace `grpc://0.0.0.0:5050` with the URL of your Flight server.

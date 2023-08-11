@@ -4,7 +4,7 @@ import org.apache.arrow.memory.RootAllocator;
 import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
 
-public class HealthCheckClient {
+public class ClientStore {
     public static void main(String[] args) throws InterruptedException {
         // Create a new root allocator
         final RootAllocator allocator = new RootAllocator(Long.MAX_VALUE);
