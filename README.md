@@ -85,12 +85,19 @@ Here is system architecture for the StoreAnalytics Flight Serve
 
 **Description**
 
-1. System Health Monitoring:
+System Health Monitoring:
 
 * Action Name: "health_check"
 * Purpose: To monitor the health of the StoreAnalytics Flight Server and ensure that all components are functioning correctly.
 * Implementation: The health check action can be implemented to perform various checks, such as database connectivity, availability of essential services, memory usage, CPU load, etc.
 * Response: The action returns a status message, such as "OK" if everything is functioning correctly or detailed error messages if there are issues.
+
+Data Exchange Mechanism:
+
+* Action Name: "do_exchange"
+* Purpose: To facilitate the exchange of data between various components of the system, ensuring seamless communication and data flow.
+* Implementation: The do_exchange method can accept requests from various clients and services, process the data as required, route it to the appropriate destination, and handle any errors that may arise.
+* Response: The method returns a response indicating the status of the exchange, such as a success message confirming that the data exchange was successful or a detailed error message explaining why the exchange failed.
 
 ### Usage
 
